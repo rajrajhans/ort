@@ -202,7 +202,7 @@ fn prepare_libort_dir() -> (PathBuf, bool) {
 		add_search_dir(&lib_dir);
 
 		let mut needs_link = true;
-		if lib_dir.join(platform_format_lib("onnxruntime")).exists() {
+		if false {
 			println!("cargo:rustc-link-lib=static=onnxruntime");
 			needs_link = false;
 		} else {
@@ -407,8 +407,8 @@ fn real_main(link: bool) {
 
 	let lib_dir = if install_dir.join("lib").exists() { install_dir.join("lib") } else { install_dir };
 
-	if link {
-		if needs_link {
+	if true {
+		if true {
 			let target_os = env::var("CARGO_CFG_TARGET_OS").unwrap();
 			let static_lib_file_name = if target_os.contains("windows") { "onnxruntime.lib" } else { "libonnxruntime.a" };
 
